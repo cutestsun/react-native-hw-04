@@ -14,7 +14,7 @@ import { Formik } from "formik";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
-import { colors, inputTheme } from "../utils/variables";
+import { colors, authInputTheme } from "../utils/variables";
 import { Background } from "../components/Background";
 import { SubmitBtn } from "../components/SubmitBtn";
 import { registrationValidationSchema } from "../utils/schemas";
@@ -103,7 +103,7 @@ export const RegistrationScreen = () => {
                           label="Логін"
                           outlineColor={colors.inputBorderColor}
                           outlineStyle={{ borderWidth: 1 }}
-                          theme={inputTheme}
+                          theme={authInputTheme}
                           contentStyle={styles.input}
                         />
                         {touched.name && errors.name && (
@@ -127,7 +127,7 @@ export const RegistrationScreen = () => {
                           label="Адреса електронної пошти"
                           outlineColor={colors.inputBorderColor}
                           outlineStyle={{ borderWidth: 1 }}
-                          theme={inputTheme}
+                          theme={authInputTheme}
                           contentStyle={styles.input}
                         />
                         {touched.email && errors.email && (
@@ -151,7 +151,7 @@ export const RegistrationScreen = () => {
                             label="Пароль"
                             outlineColor={colors.inputBorderColor}
                             outlineStyle={{ borderWidth: 1 }}
-                            theme={inputTheme}
+                            theme={authInputTheme}
                             contentStyle={styles.input}
                           />
                           {touched.password && errors.password && (
