@@ -1,8 +1,11 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
+import "react-native-gesture-handler";
+import { StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
-import { RegistrationScreen } from "./screens/RegistrationScreen";
-import { LoginScreen } from "./screens/LoginScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { Home, LoginScreen, RegistrationScreen } from "./screens";
+
+const MainStack = createStackNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,25 +22,22 @@ export default function App() {
   }
 
   return (
-    <View style={styles.mainContainer}>
-      <ImageBackground
-        source={require("./assets/img/bg-image.jpg")}
-        resizeMode="cover"
-        style={styles.image}
+    <NavigationContainer>
+      <MainStack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: false,
+          gestureEnabled: true,
+        }}
       >
-        {/* <RegistrationScreen /> */}
-        <LoginScreen />
-        <StatusBar style="auto" />
-      </ImageBackground>
-    </View>
+        <MainStack.Screen name="Registration" component={RegistrationScreen} />
+        <MainStack.Screen name="Login" component={LoginScreen} />
+        <MainStack.Screen
+          name="Home"
+          component={Home}
+          options={{ gestureEnabled: true }}
+        />
+      </MainStack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-  },
-});
