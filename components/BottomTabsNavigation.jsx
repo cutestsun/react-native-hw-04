@@ -1,28 +1,16 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import * as Device from "expo-device";
-import { colors } from "../utils/variables";
-import { ArrowLeftIcon, LogOutIcon, TabBarIcon } from "../components/Icons";
+import { TabBarIcon } from "../components/Icons";
 import { CreatePostsScreen, PostsScreen, ProfileScreen } from "../screens";
+import { colors } from "../utils/variables";
+import { hasDynamicIsland } from "../utils/hasDynamicIsland";
+import { BackBtn } from "./BackBtn";
+import { LogoutBtn } from "./LogoutBtn";
 
 const Tab = createBottomTabNavigator();
 
 export const HomeTabsNavigation = () => {
-  const iphones = [
-    "iPhone15,2", // 14 Pro
-    "iPhone15,3", // 14 Pro Max
-    "arm64", //for simulator
-  ];
-
-  const isIphoneWithDynamicIsland = iphones.includes(Device.modelId);
-
   const navigation = useNavigation();
 
   return (
@@ -41,8 +29,7 @@ export const HomeTabsNavigation = () => {
         headerStyle: {
           borderBottomWidth: 1,
           borderColor: "rgba(0, 0, 0, 0.30)",
-          height:
-            Platform.OS === "ios" ? (isIphoneWithDynamicIsland ? 108 : 88) : 72,
+          height: Platform.OS === "ios" ? (hasDynamicIsland ? 108 : 88) : 72,
         },
         headerTitleAlign: "center",
         headerTitleStyle: {
@@ -62,11 +49,7 @@ export const HomeTabsNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="grid" />
           ),
-          headerRight: () => (
-            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-              <LogOutIcon />
-            </TouchableOpacity>
-          ),
+          headerRight: () => <LogoutBtn style={{ marginRight: 16 }} />,
         }}
       />
       <Tab.Screen
@@ -77,11 +60,7 @@ export const HomeTabsNavigation = () => {
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="plus" />
           ),
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <ArrowLeftIcon />
-            </TouchableOpacity>
-          ),
+          headerLeft: () => <BackBtn />,
           tabBarStyle: {
             display: "none",
           },

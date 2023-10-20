@@ -13,12 +13,12 @@ import { TextInput } from "react-native-paper";
 import { Formik } from "formik";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
 import { colors, authInputTheme } from "../utils/variables";
 import { Background } from "../components/Background";
 import { SubmitBtn } from "../components/SubmitBtn";
 import { registrationValidationSchema } from "../utils/schemas";
 import { AuthSwitchBtn } from "../components/AuthSwitchBtn";
+import { AddAvatarBtn } from "../components/AddAvatarBtn";
 
 export const RegistrationScreen = () => {
   const [isVisiblePassword, setIsVisiblePassword] = useState(true);
@@ -55,20 +55,7 @@ export const RegistrationScreen = () => {
                   height: isOpenKeyboard ? 370 : "auto",
                 }}
               >
-                <TouchableOpacity
-                  // onPress={}
-                  style={styles.addPhotoBtn}
-                  accessibilityLabel="Add photo"
-                >
-                  <View style={styles.addPhotoIconWrapper}>
-                    <Ionicons
-                      name="add-circle-outline"
-                      size={34}
-                      color={colors.mainAccentColor}
-                      style={styles.addPhotoIcon}
-                    />
-                  </View>
-                </TouchableOpacity>
+                <AddAvatarBtn />
                 <Text style={styles.title}>Реєстрація</Text>
                 <Formik
                   initialValues={{ name: "", email: "", password: "" }}
@@ -217,30 +204,6 @@ const styles = StyleSheet.create({
     paddingRight: 16,
   },
 
-  addPhotoBtn: {
-    position: "absolute",
-    top: -60,
-    alignSelf: "center",
-    width: 120,
-    height: 120,
-    backgroundColor: colors.inputBgColor,
-    borderRadius: 16,
-  },
-  addPhotoIconWrapper: {
-    borderRadius: 50,
-    position: "absolute",
-    right: -14,
-    bottom: 12,
-    width: 28,
-    height: 28,
-    overflow: "hidden",
-  },
-  addPhotoIcon: {
-    backgroundColor: "#fff",
-    position: "relative",
-    marginLeft: -2,
-    marginTop: -4.2,
-  },
   title: {
     color: colors.mainTextColor,
     textAlign: "center",

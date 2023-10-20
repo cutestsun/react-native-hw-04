@@ -30,3 +30,11 @@ export const createPostInputTheme = {
     background: "#fff",
   },
 };
+
+export const commentTheme = {
+  roundness: 50,
+  colors: {
+    primary: colors.mainAccentColor,
+    background: colors.inputBgColor,
+  },
+};

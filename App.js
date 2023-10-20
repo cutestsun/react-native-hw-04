@@ -1,9 +1,16 @@
 import "react-native-gesture-handler";
-import { StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Home, LoginScreen, RegistrationScreen } from "./screens";
+import {
+  CommentsScreen,
+  Home,
+  LoginScreen,
+  RegistrationScreen,
+} from "./screens";
+import { colors, hasDynamicIsland } from "./utils";
+
+import { BackBtn } from "./components/BackBtn";
 
 const MainStack = createStackNavigator();
 
@@ -24,18 +31,37 @@ export default function App() {
   return (
     <NavigationContainer>
       <MainStack.Navigator
-        initialRouteName="Registration"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
-          gestureEnabled: true,
+          gestureEnabled: false,
         }}
       >
         <MainStack.Screen name="Registration" component={RegistrationScreen} />
         <MainStack.Screen name="Login" component={LoginScreen} />
+        <MainStack.Screen name="Home" component={Home} />
         <MainStack.Screen
-          name="Home"
-          component={Home}
-          options={{ gestureEnabled: true }}
+          name="Comments"
+          component={CommentsScreen}
+          options={{
+            gestureEnabled: true,
+            headerShown: true,
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: "rgba(0, 0, 0, 0.30)",
+              height:
+                Platform.OS === "ios" ? (hasDynamicIsland ? 108 : 88) : 72,
+            },
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              color: colors.mainTextColor,
+              fontFamily: "Roboto-Medium",
+              fontSize: 17,
+              lineHeight: 22,
+              letterSpacing: -0.408,
+            },
+            headerLeft: () => <BackBtn />,
+          }}
         />
       </MainStack.Navigator>
     </NavigationContainer>

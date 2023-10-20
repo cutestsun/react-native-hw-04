@@ -8,20 +8,38 @@ import {
 } from "react-native";
 
 import { colors } from "../utils/variables";
+import { Post } from "../components/Post";
+
+import postsData from "posts.json";
+import images from "../assets/img/post-images/images";
 
 export const PostsScreen = () => {
   return (
-    <ScrollView style={styles.mainContainer}>
-      <TouchableOpacity style={styles.userCard}>
-        <Image
-          source={require("../assets/img/user-img.jpg")}
-          style={styles.image}
-        />
-        <View style={styles.userInfo}>
-          <Text style={styles.name}>Natali Romanova</Text>
-          <Text style={styles.email}>email@example.com</Text>
-        </View>
-      </TouchableOpacity>
+    <ScrollView style={{ backgroundColor: "#fff" }}>
+      <View style={styles.mainContainer}>
+        <TouchableOpacity style={styles.userCard}>
+          <Image
+            source={require("assets/img/user-images/user-img_NataliRomanova.jpg")}
+            style={styles.image}
+          />
+          <View style={styles.userInfo}>
+            <Text style={styles.name}>Natali Romanova</Text>
+            <Text style={styles.email}>email@example.com</Text>
+          </View>
+        </TouchableOpacity>
+        {postsData.map(({ id, content, likes, location, comments }) => {
+          return (
+            <Post
+              key={id}
+              image={images[id]}
+              description={content}
+              likes={likes}
+              location={location}
+              comments={comments}
+            />
+          );
+        })}
+      </View>
     </ScrollView>
   );
 };
@@ -30,8 +48,10 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     paddingHorizontal: 16,
-    paddingVertical: 32,
     backgroundColor: "#fff",
+    rowGap: 32,
+    paddingTop: 32,
+    paddingBottom: 44,
   },
   userCard: {
     flexDirection: "row",

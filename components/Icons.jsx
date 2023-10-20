@@ -20,15 +20,8 @@ export const TabBarIcon = ({ focused, name }) => {
   );
 };
 
-export const LogOutIcon = () => {
-  return (
-    <Feather
-      name="log-out"
-      size={24}
-      color={colors.secondaryIconColor}
-      style={{ marginRight: 16 }}
-    />
-  );
+export const LogoutIcon = () => {
+  return <Feather name="log-out" size={24} color={colors.secondaryIconColor} />;
 };
 
 export const ArrowLeftIcon = () => {
@@ -54,6 +47,36 @@ export const LocationIcon = () => {
 
 export const TrashIcon = ({ color }) => {
   return <Feather name="trash-2" size={24} color={color} />;
+};
+
+export const MessageIcon = ({ color }) => {
+  return (
+    <Feather
+      name="message-circle"
+      size={24}
+      color={color}
+      style={{ transform: [{ scaleX: -1 }] }}
+    />
+  );
+};
+
+export const LikeIcon = ({ color }) => {
+  return <Feather name="thumbs-up" size={24} color={color} />;
+};
+
+export const SendIcon = ({ color, backgroundColor }) => {
+  return (
+    <Feather
+      name="arrow-up"
+      size={26}
+      color={color}
+      style={{
+        padding: 7,
+        backgroundColor: backgroundColor,
+        borderRadius: 50,
+      }}
+    />
+  );
 };
 
 const styles = StyleSheet.create({

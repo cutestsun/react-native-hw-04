@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "regular": "assets/img/post-img1.jpg",
+      "retina": "assets/img/post-img1@2x.jpg"
+    },
+    "author": "Natali Romanova",
+    "content": "Ліс",
+    "likes": 153,
+    "location": {
+      "country": "Ukraine",
+      "detailed": "Ivano-Frankivs'k Region, Ukraine"
+    },
+    "comments": [
+      {
+        "id": 1,
+        "author": "Gerald Wells",
+        "content": "Really love your most recent photo. I've been trying to capture the same thing for a few months and would love some tips!",
+        "createdAt": "2020-06-09T08:40:00.000+02:00"
+      },
+      {
+        "id": 2,
+        "author": "Natali Romanova",
+        "content": "A fast 50mm like f1.8 would help with the bokeh. I've been using primes as they tend to get a bit sharper images.",
+        "createdAt": "2020-06-09T09:14:00.000+02:00"
+      },
+      {
+        "id": 3,
+        "author": "Gerald Wells",
+        "content": "Thank you! That was very helpful!",
+        "createdAt": "2020-06-09T09:20:00.000+02:00"
+      }
+    ]
+  },
+
+  {
+    "id": 2,
+    "image": {
+      "regular": "assets/img/post-img2.jpg",
+      "retina": "assets/img/post-img2@2x.jpg"
+    },
+    "author": "Natali Romanova",
+    "content": "Захід на Чорному морі",
+    "likes": 318,
+    "location": {
+      "country": "Ukraine",
+      "detailed": "Odesa, Ukraine"
+    },
+    "comments": [
+      {
+        "id": 1,
+        "author": "Gerald Wells",
+        "content": "Really love your most recent photo. I've been trying to capture the same thing for a few months and would love some tips!",
+        "createdAt": "2020-06-09T08:40:00.000+02:00"
+      },
+      {
+        "id": 2,
+        "author": "Natali Romanova",
+        "content": "A fast 50mm like f1.8 would help with the bokeh. I've been using primes as they tend to get a bit sharper images.",
+        "createdAt": "2020-06-09T09:14:00.000+02:00"
+      },
+      {
+        "id": 3,
+        "author": "Gerald Wells",
+        "content": "Thank you! That was very helpful!",
+        "createdAt": "2020-06-09T09:20:00.000+02:00"
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "image": {
+      "regular": "assets/img/post-img3.jpg",
+      "retina": "assets/img/post-img3@2x.jpg"
+    },
+    "author": "Natali Romanova",
+    "content": "Старий будиночок у Венеції",
+    "likes": 435,
+    "location": {
+      "country": "Italy",
+      "detailed": "Venice, Italy"
+    },
+    "comments": [
+      {
+        "id": 1,
+        "author": "Gerald Wells",
+        "content": "Really love your most recent photo. I've been trying to capture the same thing for a few months and would love some tips!",
+        "createdAt": "2020-06-09T08:40:00.000+02:00"
+      },
+      {
+        "id": 2,
+        "author": "Natali Romanova",
+        "content": "A fast 50mm like f1.8 would help with the bokeh. I've been using primes as they tend to get a bit sharper images.",
+        "createdAt": "2020-06-09T09:14:00.000+02:00"
+      },
+      {
+        "id": 3,
+        "author": "Gerald Wells",
+        "content": "Thank you! That was very helpful!",
+        "createdAt": "2020-06-09T09:20:00.000+02:00"
+      }
+    ]
+  }
+]
