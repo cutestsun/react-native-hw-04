@@ -10,7 +10,7 @@ import {
 } from "./screens";
 import { colors, hasDynamicIsland } from "./utils";
 
-import { BackBtn } from "./components/BackBtn";
+import { BackBtn } from "./components/BackBtn/BackBtn";
 
 const MainStack = createStackNavigator();
 
