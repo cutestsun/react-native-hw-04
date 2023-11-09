@@ -1,2 +1,1 @@
-# react-native-hw-04
-📚 React Native Homework 4
+# 📚 React Native Homework 4
